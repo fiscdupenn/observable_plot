@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import * as Plot from "@observablehq/plot";
+import PlotFigure from "./PlotFigure.js";
+import penguins from "./penguins.json";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Penguins</h1>
+      <PlotFigure
+        options={{
+          marks: [
+            Plot.dot(penguins, {x: "culmen_length_mm", y: "culmen_depth_mm"})
+          ]
+        }}
+      />
     </div>
   );
 }
-
-export default App;

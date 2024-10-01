@@ -20,7 +20,9 @@ export default function App() {
       <PlotFigure
         options={{
           x: { tickFormat: "d", interval: 1 },
-          marks: [Plot.barY(timeseries, { x: "year", y: "population" })]
+          marks: [
+            Plot.barY(timeseries, { x: "year", y: "population" })
+          ]
         }}
       />
     </div>

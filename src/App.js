@@ -11,9 +11,11 @@ export default function App() {
       <h2>Penguins scatterplot</h2>
       <PlotFigure
         options={{
-          marks: [
-            Plot.dot(penguins, { x: "culmen_length_mm", y: "culmen_depth_mm", stroke: "species" })
-          ]
+            marks: [
+              Plot.dot(penguins, { x: "culmen_length_mm", y: "culmen_depth_mm", stroke: "species" }),
+              Plot.linearRegressionY(penguins, {x: "culmen_length_mm", y: "culmen_depth_mm", stroke: "species"}),
+              Plot.linearRegressionY(penguins, {x: "culmen_length_mm", y: "culmen_depth_mm"})
+            ]
         }}
       />
       <h2>Time-series bar chart</h2>
